@@ -92,14 +92,14 @@ class BasicDataset(Dataset):
             mask_out = np.zeros_like(mask[:, :, 0])
             mask_out[mask[:, :, 0] == 255] = 1
             mask = mask_out
-            if self.set_mode=='train':
-                mask = self.process_data(mask,random_seed)
+            # if self.set_mode=='train':
+            #     mask = self.process_data(mask,random_seed)
             # mask = mask[224:448,224:448]
         # img = self.preprocess(img, self.scale)
         # mask = self.preprocess(mask, self.scale)
         # img= img[224:448,224:448,:]
         # img_out = img
-        img = self.process_data(img,random_seed)
+        # img = self.process_data(img,random_seed)
         img_out = cv2.resize(img, (448,448))
         # cv2.imshow('a',img_out)
         # cv2.waitKey()

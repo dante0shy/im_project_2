@@ -114,10 +114,9 @@ def train_net(net,
 
 
 if __name__ == '__main__':
-
-    # net = UNet(n_channels=3, n_classes=1, bilinear=True)
+    from torchsummary import summary
     net = ResNetUNet(2)
-
+    summary(net, input_size=(3, 224, 224))
     train_net(net=net,
                   epochs=400,
                   batch_size=2,
